@@ -1,14 +1,14 @@
 <script>
-    export let data;
-    import Navbar from '$lib/components/Navbar.svelte';
-    import Footer from '$lib/components/Footer.svelte';
-	  import Overzicht from '../../lib/components/Overzicht.svelte';
-  </script>
-  
-  
+  export let data;
+  import Navbar from '$lib/Organism/Navbar.svelte';
+  import Overview from '../../lib/Organism/Overview.svelte';
+  import Footer from '$lib/Organism/Footer.svelte';
+</script>
 
-    <Navbar />
-    <Overzicht {data} />
-    <Footer />
+
+
+  <Navbar />
+  <Overview {data} />
+  <Footer />
 
   
