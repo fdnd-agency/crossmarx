@@ -1,26 +1,26 @@
 <script>
-    // Imports van Svelte-componenten
-    import Navbar from '$lib/components/Navbar.svelte';
-    import Rollen from '$lib/components/Rollen.svelte';
-    import Sdg from '$lib/components/SDG.svelte';  
-    import Status from '$lib/components/Status.svelte';
-    import Footer from '$lib/components/Footer.svelte';
+  // Imports van Svelte-componenten
+  import Navbar from '$lib/Organism/Navbar.svelte';
+  import Roll from '$lib/Molecul/Roll.svelte';
+  import Sdg from '$lib/Molecul/SDG.svelte';  
+  import Status from '$lib/Organism/Status.svelte';
+  import Footer from '$lib/Organism/Footer.svelte';
 
+
+  // Sla de data op in een store
+  import { writable } from 'svelte/store';
+  export let data;
+  export const test = writable(1);
   
-    // Sla de data op in een store
-    import { writable } from 'svelte/store';
-    export let data;
-    export const test = writable(1);
-    
-  </script>
+</script>
   
   <!-- Layout voor Wensen -->
   <Navbar />
-  
+
   <main>
     <!-- Terugknop -->
-    <span class="btn btn-back">
-        <a href="/">
+    <span class="btn-back">
+        <a href="/overzicht">
             <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
                 <path d="M256 504C119 504 8 393 8 256S119 8 256 8s248 111 248 248-111 248-248 248zm28.9-143.6L209.4 288H392c13.3 0 24-10.7 24-24v-16c0-13.3-10.7-24-24-24H209.4l75.5-72.4c9.7-9.3 9.9-24.8.4-34.3l-11-10.9c-9.4-9.4-24.6-9.4-33.9 0L107.7 239c-9.4 9.4-9.4 24.6 0 33.9l132.7 132.7c9.4 9.4 24.6 9.4 33.9 0l11-10.9c9.5-9.5 9.3-25-.4-34.3z"/></svg>
             Terug</a>
@@ -54,7 +54,7 @@
             <!-- Sdg-component -->
             <Sdg {data} />
             <!-- Rollen-component -->
-            <Rollen />
+            <Roll />
         </div>
       </section>
     <Status {data} />
@@ -129,38 +129,40 @@
     }
   
     /* Algemene stijl voor knoppen */
-    span{
+    /* span{
     padding-left: 0;
     padding-right: 0;
     display: inline-flex;
     align-items: center; 
     margin: 1.5rem 0; 
-    }
-    
-    span a{
-      color: black;
-    }
+    } */
   
-    .btn {
-        display: inline-block;
-        font-weight: 400;
-        color: #333;
-        text-align: center;
-        vertical-align: middle;
-        user-select: none;
-        background-color: transparent;
-        border: 1px solid transparent;
-        padding: 0.375rem 0.75rem;
-        font-size: 1rem;
-        line-height: 1.5;
-        border-radius: 0;
-        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    .btn-back {
+    padding-left: 0;
+    padding-right: 0;
+    display: inline-flex;
+    align-items: center; 
+    margin: 1.5rem 0;
     }
   
     /* Stijl voor terugknop */
-    .btn-back {
-        letter-spacing: .23px;
-    }
+    .btn-back a {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    margin-bottom: 10px;
+    color: var(--black);
+    background-color: var(--yellow);
+    padding: 0.375rem 0.75rem; 
+   }
+
+    .btn-back a:hover,
+    .btn-back:hover svg path
+    {
+    background-color: var(--black); 
+    color: var(--yellow);
+    fill: var(--yellow);
+  }
   
     /* Stijl voor tijdselementen */
     time {
@@ -171,6 +173,14 @@
         margin: 2% 0%;
         font-weight: 800;
     }
+    @media only screen and (max-width: 668px) {
+  main {
+  width: 100vw; /* Correctie: dit was 'margin-left: 20p;' */
+  margin-right: auto;
+  margin-left: auto;
+  }
+
+}
 
   </style>
   
