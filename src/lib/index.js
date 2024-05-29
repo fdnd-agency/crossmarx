@@ -1,6 +1,6 @@
 
 // Atoms
-export { default as Sdg } from './atoms/sdg.svelte';
+// export { default as Sdg } from './atoms/sdg.svelte';
 export { default as SvgCost } from './atoms/svg-cost.svelte';
 export { default as SvgFilter } from './atoms/svg-filter.svelte';
 export { default as SvgHeart } from './atoms/svg-heart.svelte';
@@ -8,7 +8,7 @@ export { default as SvgRisk } from './atoms/svg-risk.svelte';
 export { default as SvgSupport } from './atoms/svg-support.svelte';
 
 // Molecul
-export { default as Filter } from './molecul/Filter.svelte';
+export { default as Filter } from './molecul/filter.svelte';
 export { default as Levels } from './molecul/levels.svelte';
 export { default as Roll } from './molecul/roll.svelte';
 
