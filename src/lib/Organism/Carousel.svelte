@@ -212,7 +212,7 @@
     .carousel-image {
       width: 50%;
       height: 100%;
-      object-fit: inherit;
+      object-fit: cover;
       aspect-ratio: 16 / 9;
 
     }
